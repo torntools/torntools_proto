@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package torntools.proto.server;
+
+import "bookie/bookie.proto";
+
+option go_package = "github.com/torntools/torntools_proto";
+
+message ViewBookieResultResquest {}
+
+message ViewBookieResultResponse {
+    repeated torntools.proto.bookie.BookieResult results = 1;
+}
+
+service TornToolServer {
+    rpc ViewBookieResult(ViewBookieResultResquest) returns (ViewBookieResultResponse) {}
+}
