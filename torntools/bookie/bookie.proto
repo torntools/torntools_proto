@@ -2,29 +2,29 @@ syntax = "proto3";
 
 package torntools.proto.bookie;
 
-option go_package ="github.com/torntools/torntools_proto";
+option go_package = "github.com/torntools/torntools_proto";
 
 enum BookieType {
-  UNKNOWN = 0;
-  TWO_WAY_FULL = 1;
-  THREE_WAY_ORDINARY = 2;
-  ASIAN_HANDICAP = 3;
-  OVER_UNDER = 4;
-  BTTS = 5;
+    UNKNOWN = 0;
+    TWO_WAY_FULL = 1;
+    THREE_WAY_ORDINARY = 2;
+    ASIAN_HANDICAP = 3;
+    OVER_UNDER = 4;
+    BTTS = 5;
 }
 
 enum BookieResult {
-  UNDECIDED = 0;
-  WIN = 1;
-  LOSE = 2;
-  REFUND = 3;
+    UNDECIDED = 0;
+    WIN = 1;
+    LOSE = 2;
+    REFUND = 3;
 }
 
 message Bookie {
-  string id = 1;
-  string description = 2;
-  BookieType bookie_type = 3;
-  int32 bet = 4;
-  float odds = 5;
-  BookieResult result = 6;
+    string id = 1;
+    string description = 2;
+    BookieType bookie_type = 3;
+    int32 bet = 4;
+    float odds = 5;
+    BookieResult result = 6;
 }
