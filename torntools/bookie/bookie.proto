@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package torntools.proto.bookie;
 
-option go_package = "github.com/torntools/torntools_proto";
+option go_package = "./torntools_proto";
 
 enum BookieType {
     UNKNOWN = 0;
