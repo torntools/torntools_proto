@@ -22,9 +22,10 @@ enum BookieResult {
 
 message Bookie {
     string id = 1;
-    string description = 2;
-    BookieType bookie_type = 3;
-    int32 bet = 4;
-    float odds = 5;
-    BookieResult result = 6;
+    int32 timestamp = 2;
+    string description = 3;
+    BookieType bookie_type = 4;
+    int32 bet = 5;
+    float odds = 6;
+    BookieResult result = 7;
 }
