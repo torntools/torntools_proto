@@ -3,13 +3,27 @@ syntax = "proto3";
 package torntools.proto.server;
 
 import "bookie/bookie.proto";
+import "google/protobuf/timestamp.proto";
 
 option go_package = "./torntools_proto";
 
-message ViewBookieResultResquest {}
+enum Status {
+    UNKNOWN = 0;
+    OK = 1;
+    INTERNAL_ERROR = 2;
+}
+
+message ViewBookieResultResquest {
+    string api = 1;
+    int32 user = 2;
+    google.protobuf.Timestamp from = 3;
+    google.protobuf.Timestamp to = 4;
+}
 
 message ViewBookieResultResponse {
-    repeated torntools.proto.bookie.BookieResult results = 1;
+    Status status = 1;
+    string error = 2;
+    repeated torntools.proto.bookie.Bookie results = 3;
 }
 
 service TornTool {
